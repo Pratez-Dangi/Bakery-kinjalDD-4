@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Cookies | CookieBliss 🍪</title>
+
+    <style>
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff8f0;
+            color: #4b2e1f;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            width: 100%;
+            min-height: 72px;
+            padding: 14px 6%;
+            background: #5a321f;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #ffc66d;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 2px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffc66d;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            width: 0;
+            height: 2px;
+            border-radius: 10px;
+            background: #ffc66d;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Highlight the current Credits page */
+        nav ul li:last-child a {
+            background: rgba(255, 198, 109, 0.14);
+            border-radius: 20px;
+            padding: 9px 15px;
+        }
+
+        nav ul li:last-child a::after {
+            display: none;
+        }
+
+        nav ul li:last-child a:hover {
+            background: #ffc66d;
+            color: #5a321f;
+        }
+
+        /* Mobile navigation */
+        @media (max-width: 700px) {
+            nav {
+                min-height: auto;
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 6px 18px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 7px 2px;
+            }
+
+            nav ul li:last-child a {
+                padding: 7px 12px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            nav ul {
+                gap: 4px 12px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+        }
+
+
+        /* =====================================================
+           PAGE HEADER
+        ===================================================== */
+
+        .page-header {
+            padding: 85px 20px 75px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0d9,
+                    #ffdca8
+                );
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: "🍪";
+
+            position: absolute;
+
+            font-size: 150px;
+
+            opacity: 0.08;
+
+            left: 7%;
+            top: 10px;
+
+            transform: rotate(-15deg);
+        }
+
+        .page-header::after {
+            content: "🍪";
+
+            position: absolute;
+
+            font-size: 110px;
+
+            opacity: 0.08;
+
+            right: 8%;
+            bottom: 5px;
+
+            transform: rotate(20deg);
+        }
+
+        .header-tag {
+            display: inline-block;
+
+            background: #5a321f;
+            color: white;
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            font-size: 11px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 15px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(40px, 6vw, 62px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 15px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 span {
+            color: #c96b27;
+        }
+
+        .page-header p {
+            color: #704936;
+
+            font-size: 17px;
+
+            line-height: 1.6;
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =====================================================
+           MENU INTRO
+        ===================================================== */
+
+        .menu-intro {
+            text-align: center;
+
+            padding: 55px 20px 25px;
+        }
+
+        .menu-intro h2 {
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+        .menu-intro p {
+            color: #80604e;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           COOKIE GRID
+        ===================================================== */
+
+        .section {
+            padding: 35px 7% 80px;
+        }
+
+        .products {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+
+        /* =====================================================
+           COOKIE CARD
+        ===================================================== */
+
+        .card {
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            border: 1px solid #f0ded0;
+
+            box-shadow:
+                0 8px 25px rgba(75, 46, 31, 0.08);
+
+            position: relative;
+
+            transition:
+                transform 0.35s,
+                box-shadow 0.35s;
+        }
+
+        .card:hover {
+            transform: translateY(-9px);
+
+            box-shadow:
+                0 20px 40px rgba(75, 46, 31, 0.15);
+        }
+
+        .card-image {
+            position: relative;
+
+            height: 220px;
+
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.06);
+        }
+
+
+        /* =====================================================
+           BADGES
+        ===================================================== */
+
+        .badge {
+            position: absolute;
+
+            top: 15px;
+            left: 15px;
+
+            padding: 7px 12px;
+
+            border-radius: 20px;
+
+            background: #5a321f;
+            color: white;
+
+            font-size: 11px;
+            font-weight: bold;
+
+            z-index: 2;
+        }
+
+        .badge.new {
+            background: #c96b27;
+        }
+
+        .badge.favorite {
+            background: #8c5b3d;
+        }
+
+
+        /* =====================================================
+           CARD CONTENT
+        ===================================================== */
+
+        .card-content {
+            padding: 24px;
+        }
+
+        .card-content h3 {
+            font-size: 22px;
+
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #80604e;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            min-height: 45px;
+
+            margin-bottom: 18px;
+        }
+
+        .card-bottom {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+        .price {
+            color: #c96b27;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+        .btn {
+            border: none;
+
+            padding: 11px 17px;
+
+            border-radius: 25px;
+
+            background: #c96b27;
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #9f4d18;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           SPECIAL FEATURE
+        ===================================================== */
+
+        .special {
+            max-width: 1200px;
+
+            margin: 20px auto 70px;
+
+            padding: 45px;
+
+            border-radius: 28px;
+
+            background: #5a321f;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            overflow: hidden;
+
+            position: relative;
+
+            box-shadow:
+                0 15px 35px rgba(75, 46, 31, 0.18);
+        }
+
+        .special::after {
+            content: "🍪";
+
+            position: absolute;
+
+            right: 25px;
+            bottom: -40px;
+
+            font-size: 150px;
+
+            opacity: 0.06;
+        }
+
+        .special-text {
+            position: relative;
+
+            z-index: 2;
+        }
+
+        .special-label {
+            color: #ffc66d;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .special h2 {
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .special p {
+            color: #f5dfce;
+
+            max-width: 650px;
+
+            line-height: 1.7;
+        }
+
+        .special .btn {
+            background: #ffc66d;
+
+            color: #4b2e1f;
+
+            position: relative;
+
+            z-index: 2;
+
+            white-space: nowrap;
+        }
+
+        .special .btn:hover {
+            background: white;
+        }
+
+
+        /* =====================================================
+           CART BUTTON
+        ===================================================== */
+
+        .cart-bar {
+            position: fixed;
+
+            bottom: 25px;
+            right: 25px;
+
+            z-index: 900;
+
+            background: #5a321f;
+            color: white;
+
+            padding: 14px 20px;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.2);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .cart-bar:hover {
+            transform: translateY(-4px);
+
+            background: #432516;
+        }
+
+        .cart-count {
+            background: #ffc66d;
+
+            color: #4b2e1f;
+
+            min-width: 23px;
+            height: 23px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           CART MESSAGE
+        ===================================================== */
+
+        #cart-message {
+            position: fixed;
+
+            top: 90px;
+            right: 25px;
+
+            background: #5a321f;
+            color: white;
+
+            padding: 14px 20px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.2);
+
+            opacity: 0;
+
+            transform: translateY(-15px);
+
+            pointer-events: none;
+
+            transition:
+                opacity 0.3s,
+                transform 0.3s;
+
+            z-index: 1100;
+        }
+
+        #cart-message.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #321a10;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 45px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #e9cfc0;
+
+            margin: 7px;
+        }
+
+        .socials {
+            margin-top: 18px;
+        }
+
+        .socials a {
+            color: #ffc66d;
+
+            margin: 0 10px;
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: white;
+        }
+
+
+        /* =====================================================
+           SCROLL ANIMATION
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           CART PANEL
+        ===================================================== */
+
+        .cart-overlay {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.45);
+
+            z-index: 2000;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition: 0.3s;
+        }
+
+        .cart-overlay.show {
+            opacity: 1;
+
+            visibility: visible;
+        }
+
+        .cart-panel {
+            position: fixed;
+
+            top: 0;
+            right: -430px;
+
+            width: min(430px, 100%);
+
+            height: 100vh;
+
+            background: #fff8f0;
+
+            z-index: 2100;
+
+            box-shadow:
+                -10px 0 35px rgba(0, 0, 0, 0.2);
+
+            transition: right 0.35s ease;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+        .cart-panel.show {
+            right: 0;
+        }
+
+        .cart-header {
+            background: #5a321f;
+
+            color: white;
+
+            padding: 22px 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .cart-header h2 {
+            margin: 0;
+
+            font-size: 24px;
+        }
+
+        .close-cart {
+            border: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+
+            line-height: 1;
+        }
+
+        .cart-items {
+            flex: 1;
+
+            overflow-y: auto;
+
+            padding: 20px;
+        }
+
+        .empty-cart {
+            text-align: center;
+
+            color: #80604e;
+
+            padding: 50px 20px;
+        }
+
+        .cart-item {
+            background: white;
+
+            border: 1px solid #f0ded0;
+
+            border-radius: 16px;
+
+            padding: 15px;
+
+            margin-bottom: 14px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+
+            color: #4b2e1f;
+
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: #c96b27;
+
+            font-weight: bold;
+        }
+
+        .quantity-controls {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 8px;
+        }
+
+        .quantity-controls button {
+            width: 28px;
+            height: 28px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: #c96b27;
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .quantity-controls span {
+            min-width: 20px;
+
+            text-align: center;
+
+            font-weight: bold;
+        }
+
+        .remove-item {
+            border: none;
+
+            background: transparent;
+
+            color: #a14d35;
+
+            cursor: pointer;
+
+            font-size: 12px;
+        }
+
+        .cart-footer {
+            background: white;
+
+            border-top: 1px solid #f0ded0;
+
+            padding: 20px;
+        }
+
+        .cart-total {
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            color: #4b2e1f;
+
+            margin-bottom: 15px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 25px;
+
+            background: #c96b27;
+
+            color: white;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        .checkout-btn:hover {
+            background: #9f4d18;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .special {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 16px 5%;
+
+                flex-direction: column;
+
+                gap: 14px;
+            }
+
+            .logo {
+                font-size: 26px;
+            }
+
+            nav ul {
+                width: 100%;
+
+                justify-content: center;
+
+                gap: 18px;
+
+                flex-wrap: wrap;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .page-header {
+                padding: 65px 20px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .special {
+                margin-left: 5%;
+                margin-right: 5%;
+
+                padding: 40px 25px;
+            }
+
+            .card-image {
+                height: 230px;
+            }
+
+            .cart-bar {
+                bottom: 15px;
+
+                right: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ===================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            Cookie<span>Bliss</span> 🍪
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="cookies.html">
+                    Cookies
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="Credits.html">
+                    Credits
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================================
+         PAGE HEADER
+    ===================================================== -->
+
+    <section class="page-header">
+
+        <div class="header-tag">
+            FRESH FROM THE OVEN
+        </div>
+
+        <h1>
+            Pick Your
+            <span>Perfect Treat</span> 🍪
+        </h1>
+
+        <p>
+            Freshly baked flavors made to brighten your day.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ===================================================== -->
+
+    <section class="menu-intro">
+
+        <h2>
+            Something for Everyone
+        </h2>
+
+        <p>
+            From sweet treats to freshly baked favorites,
+            find something delicious for everyone.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         COOKIE PRODUCTS
+    ===================================================== -->
+
+    <section class="section">
+
+        <div class="products">
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge favorite">
+                        BEST SELLER
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1575377427642-087cf684f04d?auto=format&fit=crop&w=800&q=80"
+                        alt="Oreo Pops">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Oreo Pops
+                    </h3>
+
+                    <p>
+                        Crunchy Oreo cookies dipped in a sweet coating
+                        and served on a stick.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $6.99
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Oreo Pops')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge favorite">
+                        FAVORITE
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80"
+                        alt="Brookies">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Brookies
+                    </h3>
+
+                    <p>
+                        The perfect mix of a fudgy brownie
+                        and a soft, chewy cookie.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $8.49
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Brookies')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge new">
+                        NEW
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80"
+                        alt="Japanese Kiwi Sandos">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Japanese Kiwi Sandos
+                    </h3>
+
+                    <p>
+                        Soft, fluffy bread layered with creamy filling
+                        and fresh kiwi slices.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $7.99
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Japanese Kiwi Sandos')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge">
+                        CHOCOLATE
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&w=800&q=80"
+                        alt="Chocolate Cake Pops">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Chocolate Cake Pops
+                    </h3>
+
+                    <p>
+                        Moist chocolate cake covered in
+                        a smooth chocolate coating.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $5.99
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Chocolate Cake Pops')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge new">
+                        STRAWBERRY
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=800&q=80"
+                        alt="Strawberry Cake Pops">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Strawberry Cake Pops
+                    </h3>
+
+                    <p>
+                        Sweet strawberry cake bites finished
+                        with a delicious creamy coating.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $5.99
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Strawberry Cake Pops')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge">
+                        SPECIAL
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80"
+                        alt="Vanilla Red Velvet Cake Pops">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Vanilla Red Velvet Cake Pops
+                    </h3>
+
+                    <p>
+                        Rich red velvet cake bites with
+                        a smooth vanilla coating.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $6.49
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Vanilla Red Velvet Cake Pops')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge favorite">
+                        CLASSIC
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?auto=format&fit=crop&w=800&q=80"
+                        alt="Banana Bread">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Banana Bread
+                    </h3>
+
+                    <p>
+                        Soft, moist banana bread with
+                        a warm homemade flavor.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $6.99
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Banana Bread')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge favorite">
+                        FAVORITE
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=800&q=80"
+                        alt="Cinnamon Rolls">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Cinnamon Rolls
+                    </h3>
+
+                    <p>
+                        Soft swirls of cinnamon goodness
+                        with a sweet, comforting finish.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $7.49
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Cinnamon Rolls')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge">
+                        CLASSIC
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80"
+                        alt="Sugar Cookies">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Sugar Cookies
+                    </h3>
+
+                    <p>
+                        Soft, buttery sugar cookies
+                        with a simple sweet flavor.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $6.49
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Sugar Cookies')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge new">
+                        SAVORY
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1573140401552-388e9e5c9c4f?auto=format&fit=crop&w=800&q=80"
+                        alt="Garlic Bread">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Garlic Bread
+                    </h3>
+
+                    <p>
+                        Freshly baked bread with buttery garlic
+                        flavor and a golden finish.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $5.99
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Garlic Bread')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge">
+                        ENERGY
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80"
+                        alt="Granola Bars">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Granola Bars
+                    </h3>
+
+                    <p>
+                        Chewy, wholesome granola bars made
+                        for an easy anytime snack.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $6.49
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Granola Bars')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card reveal">
+
+                <div class="card-image">
+
+                    <div class="badge favorite">
+                        CHOCOLATE
+                    </div>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80"
+                        alt="Loaded Brownie Cups">
+
+                </div>
+
+                <div class="card-content">
+
+                    <h3>
+                        Loaded Brownie Cups
+                    </h3>
+
+                    <p>
+                        Rich chocolate brownie cups loaded
+                        with extra chocolate goodness.
+                    </p>
+
+                    <div class="card-bottom">
+
+                        <div class="price">
+                            $8.99
+                        </div>
+
+                        <button
+                            class="btn"
+                            onclick="addToCart('Loaded Brownie Cups')">
+
+                            Add +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SPECIAL MESSAGE
+    ===================================================== -->
+
+    <section class="special reveal">
+
+        <div class="special-text">
+
+            <div class="special-label">
+                COOKIEBLISS MISSION
+            </div>
+
+            <h2>
+                Your Treats Can Help. 🇳🇵
+            </h2>
+
+            <p>
+                CookieBliss is more than a bakery project.
+                Our sales are part of our effort to raise funds
+                to support people affected by floods in Nepal.
+                Every order helps us work toward that goal.
+            </p>
+
+        </div>
+
+        <a href="about.html" class="btn">
+            Our Mission →
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         CART BUTTON
+    ===================================================== -->
+
+    <div
+        class="cart-bar"
+        onclick="openCart()"
+        role="button"
+        tabindex="0"
+        onkeydown="if(event.key === 'Enter' || event.key === ' ') openCart()">
+
+        <span>
+            🛒 Cart
+        </span>
+
+        <span
+            class="cart-count"
+            id="cart-count">
+            0
+        </span>
+
+    </div>
+
+
+    <!-- =====================================================
+         CART MESSAGE
+    ===================================================== -->
+
+    <div id="cart-message">
+        🍪 Added to your cart!
+    </div>
+
+
+    <!-- =====================================================
+         CART PANEL
+    ===================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cart-overlay"
+        onclick="closeCart()">
+    </div>
+
+
+    <aside
+        class="cart-panel"
+        id="cart-panel">
+
+        <div class="cart-header">
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <button
+                class="close-cart"
+                onclick="closeCart()"
+                aria-label="Close cart">
+
+                &times;
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cart-items">
+
+            <div class="empty-cart">
+                Your cart is empty.
+            </div>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="cart-total">
+                    $0.00
+                </span>
+
+            </div>
+
+            <button
+                class="checkout-btn"
+                onclick="checkout()">
+
+                Checkout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <h2>
+            CookieBliss 🍪
+        </h2>
+
+        <p>
+            Fresh cookies. Happy moments.
+        </p>
+
+        <p>
+            Email: hello@cookiebliss.com
+        </p>
+
+        <div class="socials">
+
+            <a href="https://www.instagram.com/sakhi.initiative/">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
+        <br>
+
+        <p>
+            © 2026 CookieBliss. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        /* =====================================================
+           CART
+        ===================================================== */
+
+        const cart = {};
+
+        const prices = {
+
+            "Oreo Pops": 6.99,
+
+            "Brookies": 8.49,
+
+            "Japanese Kiwi Sandos": 7.99,
+
+            "Chocolate Cake Pops": 5.99,
+
+            "Strawberry Cake Pops": 5.99,
+
+            "Vanilla Red Velvet Cake Pops": 6.49,
+
+            "Banana Bread": 6.99,
+
+            "Cinnamon Rolls": 7.49,
+
+            "Sugar Cookies": 6.49,
+
+            "Garlic Bread": 5.99,
+
+            "Granola Bars": 6.49,
+
+            "Loaded Brownie Cups": 8.99
+
+        };
+
+
+        function addToCart(productName) {
+
+            if (!cart[productName]) {
+
+                cart[productName] = 1;
+
+            } else {
+
+                cart[productName]++;
+
+            }
+
+            updateCart();
+
+
+            const message =
+                document.getElementById("cart-message");
+
+
+            message.textContent =
+                "🍪 " +
+                productName +
+                " added to your cart!";
+
+
+            message.classList.add("show");
+
+
+            setTimeout(function() {
+
+                message.classList.remove("show");
+
+            }, 1800);
+
+        }
+
+
+        function changeQuantity(productName, amount) {
+
+            if (!cart[productName]) return;
+
+            cart[productName] += amount;
+
+
+            if (cart[productName] <= 0) {
+
+                delete cart[productName];
+
+            }
+
+
+            updateCart();
+
+        }
+
+
+        function removeFromCart(productName) {
+
+            delete cart[productName];
+
+            updateCart();
+
+        }
+
+
+        function updateCart() {
+
+            const itemsContainer =
+                document.getElementById("cart-items");
+
+            const countElement =
+                document.getElementById("cart-count");
+
+            const totalElement =
+                document.getElementById("cart-total");
+
+
+            let totalItems = 0;
+
+            let totalPrice = 0;
+
+
+            itemsContainer.innerHTML = "";
+
+
+            const products =
+                Object.keys(cart);
+
+
+            if (products.length === 0) {
+
+                itemsContainer.innerHTML =
+                    '<div class="empty-cart">Your cart is empty.</div>';
+
+            } else {
+
+                products.forEach(function(productName) {
+
+                    const quantity =
+                        cart[productName];
+
+                    const price =
+                        prices[productName] || 0;
+
+
+                    totalItems += quantity;
+
+                    totalPrice += price * quantity;
+
+
+                    const item =
+                        document.createElement("div");
+
+
+                    item.className =
+                        "cart-item";
+
+
+                    item.innerHTML = `
+
+                        <div class="cart-item-info">
+
+                            <div class="cart-item-name">
+                                ${productName}
+                            </div>
+
+                            <div class="cart-item-price">
+                                $${(price * quantity).toFixed(2)}
+                            </div>
+
+                            <div class="quantity-controls">
+
+                                <button
+                                    onclick="changeQuantity('${productName}', -1)">
+                                    −
+                                </button>
+
+                                <span>
+                                    ${quantity}
+                                </span>
+
+                                <button
+                                    onclick="changeQuantity('${productName}', 1)">
+                                    +
+                                </button>
+
+                                <button
+                                    class="remove-item"
+                                    onclick="removeFromCart('${productName}')">
+
+                                    Remove
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+
+                    itemsContainer.appendChild(item);
+
+                });
+
+            }
+
+
+            countElement.textContent =
+                totalItems;
+
+
+            totalElement.textContent =
+                "$" + totalPrice.toFixed(2);
+
+        }
+
+
+        function openCart() {
+
+            document
+                .getElementById("cart-panel")
+                .classList.add("show");
+
+
+            document
+                .getElementById("cart-overlay")
+                .classList.add("show");
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        function closeCart() {
+
+            document
+                .getElementById("cart-panel")
+                .classList.remove("show");
+
+
+            document
+                .getElementById("cart-overlay")
+                .classList.remove("show");
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        function checkout() {
+
+            if (Object.keys(cart).length === 0) {
+
+                alert(
+                    "Your cart is empty!"
+                );
+
+                return;
+
+            }
+
+
+            alert(
+                "Thank you for your order! Checkout can be connected to your order system later."
+            );
+
+        }
+
+
+        updateCart();
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        function revealOnScroll() {
+
+            const screenHeight =
+                window.innerHeight;
+
+
+            revealElements.forEach(function(element) {
+
+                const position =
+                    element
+                        .getBoundingClientRect()
+                        .top;
+
+
+                if (position < screenHeight - 70) {
+
+                    element.classList.add("active");
+
+                }
+
+            });
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+    </script>
+
+</body>
+
+</html>

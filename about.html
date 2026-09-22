@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About | CookieBliss 🍪</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+            width: 100%;
+            min-height: 72px;
+
+            padding: 14px 6%;
+
+            background: #5a321f;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow:
+                0 4px 20px
+                rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #ffc66d;
+        }
+
+        nav ul {
+            display: flex;
+
+            align-items: center;
+
+            list-style: none;
+
+            gap: 28px;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            display: block;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            padding: 10px 2px;
+
+            position: relative;
+
+            transition:
+                color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffc66d;
+        }
+
+        nav ul li a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: 3px;
+
+            width: 0;
+            height: 2px;
+
+            border-radius: 10px;
+
+            background: #ffc66d;
+
+            transition:
+                width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           CREDITS BUTTON
+        ===================================================== */
+
+        nav ul li:last-child a {
+            background: rgba(255, 198, 109, 0.14);
+
+            border-radius: 20px;
+
+            padding: 9px 15px;
+        }
+
+        nav ul li:last-child a::after {
+            display: none;
+        }
+
+        nav ul li:last-child a:hover {
+            background: #ffc66d;
+
+            color: #5a321f;
+        }
+
+
+        /* =====================================================
+           FUNDRAISER PROGRESS
+        ===================================================== */
+
+        .fundraiser {
+
+            max-width: 900px;
+
+            margin: 70px auto;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            background: #fff8f0;
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(75, 46, 31, 0.10);
+        }
+
+        .fundraiser h2 {
+
+            color: #4b2e1f;
+
+            font-size: 34px;
+
+            margin-bottom: 10px;
+        }
+
+        .fundraiser p {
+
+            color: #80604e;
+
+            margin-bottom: 28px;
+
+            line-height: 1.6;
+        }
+
+        .progress-info {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 10px;
+
+            font-weight: bold;
+
+            color: #4b2e1f;
+        }
+
+        .progress-container {
+
+            width: 100%;
+
+            height: 30px;
+
+            background: #ead8ca;
+
+            border-radius: 50px;
+
+            overflow: hidden;
+
+            box-shadow:
+                inset 0 2px 5px
+                rgba(0, 0, 0, 0.08);
+        }
+
+        .progress-bar {
+
+            width: 0;
+
+            height: 100%;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #c96b27,
+                    #f0a34a
+                );
+
+            animation:
+                fillProgress 2s ease-out forwards;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: -100px;
+
+            width: 100px;
+
+            height: 100%;
+
+            background:
+                rgba(255, 255, 255, 0.35);
+
+            transform:
+                skewX(-25deg);
+
+            animation:
+                shine 1.8s ease-in-out infinite;
+        }
+
+        @keyframes fillProgress {
+
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 35%;
+            }
+
+        }
+
+        @keyframes shine {
+
+            0% {
+                left: -100px;
+            }
+
+            60%,
+            100% {
+                left: 110%;
+            }
+
+        }
+
+        .raised {
+
+            margin-top: 22px;
+
+            font-size: 26px;
+
+            font-weight: bold;
+
+            color: #c96b27;
+        }
+
+        .goal {
+
+            font-size: 15px;
+
+            color: #80604e;
+
+            margin-top: 4px;
+        }
+
+
+        /* =====================================================
+           MOBILE NAVIGATION
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            nav {
+
+                min-height: auto;
+
+                padding: 15px 20px;
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+            nav ul {
+
+                width: 100%;
+
+                justify-content: center;
+
+                flex-wrap: wrap;
+
+                gap: 6px 18px;
+            }
+
+            nav ul li a {
+
+                font-size: 14px;
+
+                padding: 7px 2px;
+            }
+
+            nav ul li:last-child a {
+
+                padding: 7px 12px;
+            }
+
+
+            .fundraiser {
+
+                margin: 45px 18px;
+
+                padding: 35px 20px;
+            }
+
+            .fundraiser h2 {
+
+                font-size: 28px;
+            }
+
+            .progress-container {
+
+                height: 24px;
+            }
+
+            .raised {
+
+                font-size: 22px;
+            }
+
+        }
+
+
+        @media (max-width: 430px) {
+
+            nav ul {
+
+                gap: 4px 12px;
+            }
+
+            nav ul li a {
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            Cookie<span>Bliss</span> 🍪
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="cookies.html">
+                    Cookies
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="Credits.html">
+                    Credits
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
+
+    <section class="page-header">
+
+        <h1>
+            About CookieBliss ❤️
+        </h1>
+
+        <p>
+            Discover what makes every CookieBliss bite special.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT SECTION
+    ====================================================== -->
+
+    <section class="about">
+
+        <img
+            src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=900&q=80"
+            alt="Freshly baked cookies"
+        >
+
+        <div class="about-text">
+
+            <h2>
+                Baked With Love ❤️
+            </h2>
+
+            <p>
+                At CookieBliss, we believe that every cookie should bring
+                a little happiness. Our cookies are made with quality
+                ingredients and baked fresh so that every bite is soft,
+                delicious and full of flavor.
+            </p>
+
+            <br>
+
+            <p>
+                Whether you're treating yourself, celebrating a special
+                occasion, or sending a gift, we've got the perfect cookie
+                for you!
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FUNDRAISER PROGRESS
+    ====================================================== -->
+
+    <section class="fundraiser">
+
+        <h2>
+            Our Fundraiser Goal ❤️
+        </h2>
+
+        <p>
+            Every purchase helps us get closer to our fundraising goal.
+            Thank you for helping make this cause possible!
+        </p>
+
+
+        <div class="progress-info">
+
+            <span>
+                $35,000 raised
+            </span>
+
+            <span>
+                $100,000 goal
+            </span>
+
+        </div>
+
+
+        <div class="progress-container">
+
+            <div class="progress-bar"></div>
+
+        </div>
+
+
+        <div class="raised">
+            $35,000 Raised
+        </div>
+
+        <div class="goal">
+            35% of our $100,000 goal reached
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <h2>
+            CookieBliss 🍪
+        </h2>
+
+        <p>
+            Fresh cookies. Happy moments.
+        </p>
+
+        <p>
+            Email: hello@cookiebliss.com
+        </p>
+
+
+        <div class="socials">
+
+            <a href="https://www.instagram.com/sakhi.initiative/">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
+
+        <br>
+
+
+        <p>
+            © 2026 CookieBliss. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

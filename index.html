@@ -1,0 +1,1240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CookieBliss | Baking for Nepal 🍪</title>
+
+
+    <style>
+
+        /* ==============================
+           GENERAL
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #fff8f0;
+
+            color: #4b2e1f;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        nav {
+            width: 100%;
+            min-height: 72px;
+            padding: 14px 6%;
+            background: #5a321f;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #ffc66d;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 2px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffc66d;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            width: 0;
+            height: 2px;
+            border-radius: 10px;
+            background: #ffc66d;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Highlight the Credits button */
+        nav ul li:last-child a {
+            background: rgba(255, 198, 109, 0.14);
+            border-radius: 20px;
+            padding: 9px 15px;
+        }
+
+        nav ul li:last-child a::after {
+            display: none;
+        }
+
+        nav ul li:last-child a:hover {
+            background: #ffc66d;
+            color: #5a321f;
+        }
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 650px;
+
+            padding: 70px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff1dc,
+                    #ffdca8
+                );
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            background: #ffc66d;
+
+            opacity: 0.18;
+
+            border-radius: 50%;
+
+            right: -120px;
+
+            top: -150px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+
+            position: relative;
+
+            z-index: 2;
+
+            animation: heroEnter 0.9s ease;
+        }
+
+        @keyframes heroEnter {
+
+            from {
+                opacity: 0;
+
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateX(0);
+            }
+
+        }
+
+        .mission-tag {
+            display: inline-block;
+
+            padding: 9px 17px;
+
+            background: #5a321f;
+
+            color: white;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 70px);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #c96b27;
+        }
+
+        .hero p {
+            max-width: 560px;
+
+            color: #704936;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 27px;
+
+            border-radius: 30px;
+
+            background: #c96b27;
+
+            color: white;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            border: none;
+
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #9f4d18;
+
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(159, 77, 24, 0.25);
+        }
+
+        .hero-image {
+            position: relative;
+
+            z-index: 2;
+
+            animation: cookieFloat 4s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 470px;
+
+            max-width: 100%;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 25px 55px
+                rgba(75, 46, 31, 0.25);
+        }
+
+        @keyframes cookieFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        /* ==============================
+           QUICK MISSION
+        ============================== */
+
+        .mission {
+            padding: 75px 8%;
+
+            background: white;
+
+            text-align: center;
+        }
+
+        .section-label {
+            color: #c96b27;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .mission h2 {
+            font-size: 40px;
+
+            margin-bottom: 18px;
+        }
+
+        .mission h2 span {
+            color: #c96b27;
+        }
+
+        .mission p {
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #704936;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+
+        /* ==============================
+           IMPACT CARDS
+        ============================== */
+
+        .impact {
+            padding: 80px 8%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #fff8f0,
+                    #ffecd5
+                );
+
+            text-align: center;
+        }
+
+        .impact h2 {
+            font-size: 38px;
+
+            margin-bottom: 40px;
+        }
+
+        .impact-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .impact-card {
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 22px;
+
+            border: 1px solid #f0ded0;
+
+            box-shadow:
+                0 8px 25px
+                rgba(75, 46, 31, 0.08);
+
+            transition: 0.35s;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 18px 35px
+                rgba(75, 46, 31, 0.15);
+        }
+
+        .impact-icon {
+            font-size: 38px;
+
+            margin-bottom: 15px;
+        }
+
+        .impact-card h3 {
+            margin-bottom: 10px;
+
+            font-size: 21px;
+        }
+
+        .impact-card p {
+            color: #80604e;
+
+            font-size: 15px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ==============================
+           FEATURED COOKIES
+        ============================== */
+
+        .featured {
+            padding: 80px 8%;
+
+            background: white;
+
+            text-align: center;
+        }
+
+        .featured h2 {
+            font-size: 38px;
+
+            margin-bottom: 10px;
+        }
+
+        .featured-subtitle {
+            color: #80604e;
+
+            margin-bottom: 40px;
+        }
+
+        .cookie-preview {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            max-width: 1050px;
+
+            margin: auto;
+        }
+
+        .cookie-card {
+            background: #fff8f0;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            border: 1px solid #f0ded0;
+
+            transition: 0.3s;
+        }
+
+        .cookie-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(75, 46, 31, 0.12);
+        }
+
+        .cookie-card img {
+            width: 100%;
+
+            height: 190px;
+
+            object-fit: cover;
+        }
+
+        .cookie-card-content {
+            padding: 20px;
+        }
+
+        .cookie-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .cookie-card p {
+            color: #80604e;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #c96b27;
+
+            font-size: 20px;
+
+            font-weight: bold;
+        }
+
+        .view-cookies {
+            margin-top: 35px;
+        }
+
+
+        /* ==============================
+           FUNDRAISING CTA
+        ============================== */
+
+        .fundraising {
+            margin: 70px 8%;
+
+            padding: 60px 35px;
+
+            background: #5a321f;
+
+            color: white;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 40px
+                rgba(75, 46, 31, 0.2);
+        }
+
+        .fundraising::before {
+            content: "🇳🇵";
+
+            position: absolute;
+
+            font-size: 140px;
+
+            opacity: 0.06;
+
+            right: 30px;
+
+            top: 20px;
+        }
+
+        .fundraising h2 {
+            font-size: 38px;
+
+            margin-bottom: 18px;
+
+            position: relative;
+        }
+
+        .fundraising p {
+            max-width: 700px;
+
+            margin: 0 auto 25px;
+
+            color: #f5dfce;
+
+            line-height: 1.7;
+
+            position: relative;
+        }
+
+        .fundraising .btn {
+            background: #ffc66d;
+
+            color: #4b2e1f;
+
+            position: relative;
+        }
+
+        .fundraising .btn:hover {
+            background: white;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #321a10;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #e9cfc0;
+
+            margin: 7px;
+        }
+
+        .socials {
+            margin-top: 18px;
+        }
+
+        .socials a {
+            color: #ffc66d;
+
+            margin: 0 10px;
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: white;
+        }
+
+
+        /* ==============================
+           SCROLL REVEAL
+        ============================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+            .impact-container,
+            .cookie-preview {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image img {
+                width: 420px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                min-height: auto;
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 6px 18px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 7px 2px;
+            }
+
+            nav ul li:last-child a {
+                padding: 7px 12px;
+            }
+
+            .hero {
+                padding: 55px 5%;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+
+                letter-spacing: -2px;
+            }
+
+            .hero-image img {
+                width: 100%;
+            }
+
+            .mission,
+            .impact,
+            .featured {
+                padding: 65px 5%;
+            }
+
+            .mission h2,
+            .impact h2,
+            .featured h2 {
+                font-size: 32px;
+            }
+
+            .fundraising {
+                margin: 40px 5%;
+
+                padding: 45px 20px;
+            }
+
+        }
+
+        @media (max-width: 430px) {
+
+            nav ul {
+                gap: 4px 12px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         NAVIGATION
+    ============================== -->
+
+    <nav>
+
+        <div class="logo">
+            Cookie<span>Bliss</span> 🍪
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="cookies.html">
+                    Cookies
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+             <li>
+                <a href="Credits.html">
+                    Credits
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ==============================
+         HERO
+    ============================== -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <div class="mission-tag">
+                🇳🇵 BAKING FOR NEPAL
+            </div>
+
+            <h1>
+                Freshly Baked
+                <span>Happiness</span> 🍪
+            </h1>
+
+            <p>
+                Delicious cookies baked fresh with love.
+                CookieBliss is also a fundraising project
+                created to help support people affected by
+                floods in Nepal.
+            </p>
+
+            <a href="cookies.html" class="btn">
+                Explore Our Cookies
+            </a>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=80"
+                alt="Fresh chocolate chip cookies">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         QUICK MISSION
+    ============================== -->
+
+    <section class="mission reveal">
+
+        <div class="section-label">
+            MORE THAN A BAKERY
+        </div>
+
+        <h2>
+            Cookies With a
+            <span>Purpose</span>
+        </h2>
+
+        <p>
+            CookieBliss combines our love for baking with
+            our goal of supporting people affected by floods
+            in Nepal. We bake, you enjoy, and together we
+            work toward making a difference.
+        </p>
+
+    </section>
+
+
+
+    <!-- ==============================
+         THREE QUICK FACTS
+    ============================== -->
+
+    <section class="impact">
+
+        <div class="section-label">
+            WHAT WE STAND FOR
+        </div>
+
+        <h2>
+            Small Project. Bigger Purpose.
+        </h2>
+
+
+        <div class="impact-container">
+
+
+            <div class="impact-card reveal">
+
+                <div class="impact-icon">
+                    🍪
+                </div>
+
+                <h3>
+                    Bake
+                </h3>
+
+                <p>
+                    Fresh cookies made with care
+                    and a whole lot of love.
+                </p>
+
+            </div>
+
+
+
+            <div class="impact-card reveal">
+
+                <div class="impact-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Raise
+                </h3>
+
+                <p>
+                    Cookie sales help us raise funds
+                    for our fundraising mission.
+                </p>
+
+            </div>
+
+
+
+            <div class="impact-card reveal">
+
+                <div class="impact-icon">
+                    🇳🇵
+                </div>
+
+                <h3>
+                    Support
+                </h3>
+
+                <p>
+                    Our goal is to contribute toward
+                    helping flood-affected communities.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FEATURED COOKIES
+    ============================== -->
+
+    <section class="featured">
+
+        <div class="section-label">
+            FRESH FROM THE OVEN
+        </div>
+
+        <h2>
+            A Few of Our Favorites
+        </h2>
+
+        <p class="featured-subtitle">
+            Hungry already? There's plenty more to discover.
+        </p>
+
+
+        <div class="cookie-preview">
+
+
+            <div class="cookie-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80"
+                    alt="Chocolate chip cookies">
+
+                <div class="cookie-card-content">
+
+                    <h3>
+                        Chocolate Chip
+                    </h3>
+
+                    <p>
+                        A classic favorite packed
+                        with chocolate chips.
+                    </p>
+
+                    <div class="price">
+                        $8.99
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cookie-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=800&q=80"
+                    alt="Oatmeal cookies">
+
+                <div class="cookie-card-content">
+
+                    <h3>
+                        Oatmeal Delight
+                    </h3>
+
+                    <p>
+                        Soft, chewy and full
+                        of homemade flavor.
+                    </p>
+
+                    <div class="price">
+                        $7.99
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cookie-card reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1618923850107-a4c9d9f6c2c7?auto=format&fit=crop&w=800&q=80"
+                    alt="Double chocolate cookies">
+
+                <div class="cookie-card-content">
+
+                    <h3>
+                        Double Chocolate
+                    </h3>
+
+                    <p>
+                        Rich chocolate flavor
+                        for serious chocolate lovers.
+                    </p>
+
+                    <div class="price">
+                        $9.99
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="view-cookies">
+
+            <a href="cookies.html" class="btn">
+                View All Cookies →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FUNDRAISING CTA
+    ============================== -->
+
+    <section class="fundraising reveal">
+
+        <h2>
+            Your Treat Can Help. 🇳🇵
+        </h2>
+
+        <p>
+            Every CookieBliss order is an opportunity to
+            support our fundraising mission for people
+            affected by floods in Nepal.
+        </p>
+
+        <a href="about.html" class="btn">
+            Learn About Our Mission
+        </a>
+
+    </section>
+
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer id="contact">
+
+        <h2>
+            CookieBliss 🍪
+        </h2>
+
+        <p>
+            Fresh cookies. Happy moments.
+        </p>
+
+        <p>
+            A little help for Nepal.
+        </p>
+
+        <p>
+            Email: hello@cookiebliss.com
+        </p>
+
+
+        <div class="socials">
+
+            <a href="https://www.instagram.com/sakhi.initiative/">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
+
+        <br>
+
+
+        <p>
+            © 2026 CookieBliss. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    ============================== -->
+
+    <script>
+
+        /*
+         * Scroll reveal animation
+         */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        function revealOnScroll() {
+
+            const screenHeight =
+                window.innerHeight;
+
+
+            revealElements.forEach(
+                function(element) {
+
+                    const elementPosition =
+                        element.getBoundingClientRect().top;
+
+
+                    if (
+                        elementPosition <
+                        screenHeight - 80
+                    ) {
+
+                        element.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        /*
+         * Run immediately so elements
+         * already visible are animated.
+         */
+
+        revealOnScroll();
+
+    </script>
+
+
+</body>
+
+</html>

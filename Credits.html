@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | CookieBliss & Sakhi Initiative</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff8f0;
+            color: #4b2e1f;
+            line-height: 1.6;
+        }
+
+        .hero {
+            min-height: 48vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            background: linear-gradient(135deg, #fff0d9, #ffdca8);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #5a321f;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            color: #c96b27;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #704936;
+            font-size: 18px;
+        }
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #80604e;
+        }
+
+        .people {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .person {
+            background: white;
+            border: 1px solid #f0ded0;
+            border-radius: 22px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(75, 46, 31, 0.08);
+            transition: 0.3s;
+        }
+
+        .person:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(75, 46, 31, 0.13);
+        }
+
+        .person .heart {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .person h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .person p {
+            color: #80604e;
+            font-size: 14px;
+        }
+
+        .founders {
+            background: #5a321f;
+            color: white;
+            border-radius: 30px;
+            padding: 55px 35px;
+            margin-top: 25px;
+        }
+
+        .founders-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .founders-heading h2 {
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .founders-heading p {
+            color: #f5dfce;
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .founder {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .founder h3 {
+            color: #ffc66d;
+            margin-bottom: 7px;
+        }
+
+        .founder p {
+            color: #f5dfce;
+            font-size: 14px;
+        }
+
+        .message {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 10px 20px 75px;
+        }
+
+        .message h2 {
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .message p {
+            color: #704936;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #321a10;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #e9cfc0;
+        }
+
+        @media (max-width: 850px) {
+            .people,
+            .founder-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .people,
+            .founder-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 55px 18px;
+            }
+
+            .founders {
+                padding: 40px 22px;
+            }
+        }
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            width: 100%;
+            min-height: 72px;
+            padding: 14px 6%;
+            background: #5a321f;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            white-space: nowrap;
+            line-height: 1;
+        }
+
+        .logo span {
+            color: #ffc66d;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 2px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffc66d;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 3px;
+            width: 0;
+            height: 2px;
+            border-radius: 10px;
+            background: #ffc66d;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Highlight the current Credits page */
+        nav ul li:last-child a {
+            background: rgba(255, 198, 109, 0.14);
+            border-radius: 20px;
+            padding: 9px 15px;
+        }
+
+        nav ul li:last-child a::after {
+            display: none;
+        }
+
+        nav ul li:last-child a:hover {
+            background: #ffc66d;
+            color: #5a321f;
+        }
+
+        /* Mobile navigation */
+        @media (max-width: 700px) {
+            nav {
+                min-height: auto;
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            nav ul {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 6px 18px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 7px 2px;
+            }
+
+            nav ul li:last-child a {
+                padding: 7px 12px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            nav ul {
+                gap: 4px 12px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+        <nav>
+
+        <div class="logo">
+            Cookie<span>Bliss</span> 🍪
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="cookies.html">
+                    Cookies
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+             <li>
+                <a href="Credits.html">
+                    Credits
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="tag">A SPECIAL THANK YOU</div>
+
+            <h1>
+                Together, We Made It
+                <span>Happen.</span>
+            </h1>
+
+            <p>
+                CookieBliss is proud to recognize the wonderful people
+                whose time, effort, support and kindness helped make this
+                fundraiser possible.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+
+        <div class="section-heading">
+            <h2>With Gratitude</h2>
+            <p>
+                Every contribution, no matter how big or small, helped bring
+                this cause one step closer to making a difference.
+            </p>
+        </div>
+
+        <div class="people">
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@iza.iza.ice</h3>
+                <p>Thank you for being part of the effort and helping make this fundraiser possible.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@aashres_neypane</h3>
+                <p>Thank you for your support, time and contribution toward this meaningful cause.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@whynot.crocs</h3>
+                <p>Your involvement helped turn an idea into something that could make a real difference.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@epsilonaeries</h3>
+                <p>Thank you for contributing your effort and supporting the fundraiser.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@astrophile_0</h3>
+                <p>Your support helped make this initiative stronger and more meaningful.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@basically_rent</h3>
+                <p>Thank you for being part of the team behind this special cause.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@abshaaa</h3>
+                <p>Thank you for your kindness, support and contribution to the fundraiser.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@adityapant367</h3>
+                <p>Your contribution helped us move this fundraiser forward.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@ahh_tiaaa</h3>
+                <p>Thank you for lending your support to such an important cause.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@_arsuu</h3>
+                <p>Your effort and support were an important part of making this happen.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@sarangbhimali13</h3>
+                <p>Thank you for contributing to the spirit and success of this fundraiser.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@awaa.naahhh._</h3>
+                <p>Your support helped make this initiative possible. Thank you.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@_arr_yaa</h3>
+                <p>Thank you for standing behind the cause and helping us make an impact.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@ratryratryratatatataa</h3>
+                <p>Thank you for the time, energy and support you gave to this fundraiser.</p>
+            </div>
+
+            <div class="person">
+                <div class="heart">♡</div>
+                <h3>@pranushreeeg</h3>
+                <p>Your support helped make this special project possible. Thank you.</p>
+            </div>
+                <div class="person">
+                <div class="heart">♡</div>
+                <h3>@prat3.z</h3>
+                <p>Your Website Is Nice</p>
+            </div>
+
+        </div>
+
+        <div class="founders">
+
+            <div class="founders-heading">
+                <h2>The Co-Founders of Sakhi Initiative</h2>
+                <p>
+                    Special recognition to the people leading the initiative
+                    and helping turn compassion into action.
+                </p>
+            </div>
+
+            <div class="founder-grid">
+
+                <div class="founder">
+                    <h3>Ananya Kasyap</h3>
+                    <p>Chairperson · @atwtmotofe_13</p>
+                </div>
+
+                <div class="founder">
+                    <h3>Amurra Shrestha</h3>
+                    <p>Secretary General · @amurra_slh</p>
+                </div>
+
+                <div class="founder">
+                    <h3>Samriddhi Shrestha</h3>
+                    <p>CEO · @prosperity0_0</p>
+                </div>
+                
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="message">
+
+        <h2>More Than Just a Fundraiser</h2>
+
+        <p>
+            Behind every order, every contribution and every helping hand
+            was a shared belief that small actions can create meaningful
+            change. CookieBliss is incredibly grateful to everyone who
+            helped support this cause. Your kindness, encouragement and
+            effort are what made this fundraiser more than just a project.
+        </p>
+
+    </section>
+
+    <footer>
+        <h2>CookieBliss 🍪</h2>
+        <p>Thank you for being part of something meaningful.</p>
+        <br>
+        <p>In support of Sakhi Initiative</p>
+    </footer>
+
+</body>
+</html>
